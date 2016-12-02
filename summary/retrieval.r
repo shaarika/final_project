@@ -10,10 +10,12 @@ is.data.frame(data)
 # Ages range
 age.data <- filter(shooting.data, Victim.s.age != "Unknown")
 
-# oldest not working
 oldest <- select(age.data, Victim.s.age) %>%
   filter(Victim.s.age == max(Victim.s.age))
 
 youngest <- select(age.data, Victim.s.age) %>%
   filter(Victim.s.age == min(Victim.s.age))
 
+range <- oldest[1,] - youngest[1,]
+
+# 
