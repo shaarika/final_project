@@ -1,0 +1,3 @@
+# Shaarika
+# Retrieving summary information
+
