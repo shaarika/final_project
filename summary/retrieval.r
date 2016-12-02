@@ -16,6 +16,5 @@ oldest <- select(age.data, Victim.s.age) %>%
 youngest <- select(age.data, Victim.s.age) %>%
   filter(Victim.s.age == min(Victim.s.age))
 
-range <- oldest[1,] - youngest[1,]
 
 # 
