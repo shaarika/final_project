@@ -8,7 +8,7 @@ police.data <- read.csv('data/police_final.csv')
 shinyServer(function(input, output) {
   
   # renders leaflet map
-  output$map <- renderPlotly({
+  output$map <- renderLeaflet({
     
     #   1. Asian, 2. Black, 3. Hispanic, 4. Native, 5. Pacific, 6. Unknown, 7. White
     colors1 <- c('brown', 'blue', 'red', 'green', 'yellow', 'purple', 'orange')
@@ -54,12 +54,5 @@ shinyServer(function(input, output) {
     return (map)                                       
     
   })
-  
-  getColor <- function(num) {
-    col <- "red"
-    if (num > 50) {
-      col <- "blue"
-    }
-  }
   
 })

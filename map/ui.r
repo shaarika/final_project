@@ -3,9 +3,6 @@ library(plotly)
 
 shinyUI(fluidPage(
 
-  
-  sidebarLayout(
-    
      sidebarPanel(
        
        # create dropdown for dataset
@@ -26,13 +23,13 @@ shinyUI(fluidPage(
      mainPanel(
        
        # set title
-       titlePanel("Police Brutality 2013 - 2016"),
+       titlePanel("Location of Brutality Incidents"),
        
        # display plot
        leafletOutput('map')
        
      )
-    
+     
   )
   
-))
+)
