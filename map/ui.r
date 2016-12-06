@@ -1,5 +1,6 @@
 library(shiny)
 library(plotly)
+library(leaflet)
 
 shinyUI(fluidPage(
 
