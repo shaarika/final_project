@@ -1,7 +1,7 @@
-library(shiny)
 library(plotly)
 library(dplyr)
-#
+
+#Gender
 add<- police_final %>% 
   group_by(gender) %>%
   summarise(n()) 
@@ -36,12 +36,9 @@ race <- plot_ly(addition, labels = ~race, values= ~Number, type = 'pie') %>%
   layout(title = 'Race',
          xaxis = list(showgrid = FALSE, zeroline = FALSE, showticklabels = FALSE),
          yaxis = list(showgrid = FALSE, zeroline = FALSE, showticklabels = FALSE))
-###########################################
 
-shinyServer(function(input, output) {
-  output$plot1 <- renderPlotly(gender)
-  })
-
-
-
+#Age
+combination <- police_final%>%
+  group_by(age) %>%
+  summarise(n()) %>%
   
