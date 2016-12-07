@@ -41,4 +41,4 @@ police.data.final <- rbind(defineAgeGroup(0, 15), defineAgeGroup(15, 30),
 # export file
 write.csv(police.data.final, 'data/police_final.csv')
 
-# still need to polish up certain grouping errors + rename unarmed
+# still need to polish up certain grouping errors + rename unarmed + add year column

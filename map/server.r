@@ -3,12 +3,15 @@ library(plotly)
 library(leaflet)
 
 setwd("~/OneDrive/Documents/School/INFO 201/Assignments/final_project")
-police.data <- read.csv('data/police_final.csv')
+# police.data <- read.csv('data/police_final.csv')
 
 shinyServer(function(input, output) {
   
   # renders leaflet map
   output$map <- renderLeaflet({
+    
+    file <- paste0('data/', input$year, '.csv')
+    police.data <- read.csv(file)
     
     #   1. Asian, 2. Black, 3. Hispanic, 4. Native, 5. Pacific, 6. Unknown, 7. White
     colors1 <- c('brown', 'blue', 'red', 'green', 'yellow', 'purple', 'orange')

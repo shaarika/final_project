@@ -6,6 +6,12 @@ shinyUI(fluidPage(
 
      sidebarPanel(
        
+       # create checkbox group for year
+       radioButtons("year", label = h3("Select a time period:"), 
+                          choices = list("2013" = 'police_final_2013', "2014" = 'police_final_2014', "2015" = 'police_final_2015',
+                                         "2016" = 'police_final_2016', "All" = 'police_final'),
+                          selected = 'police_final'),
+       
        # create dropdown for dataset
        selectInput("dataset", label = h3("Select a dataset to display:"), 
                    choices = list("Race of victim" = 'race', "Armed status" = 'armed',
