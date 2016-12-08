@@ -1,4 +1,6 @@
 
+#STACKED BARS
+
 library(shiny)
 
 setwd("~/College/UW/INFO201/final_project")
