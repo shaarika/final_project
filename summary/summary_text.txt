@@ -1,4 +1,4 @@
-﻿Police killings have affected many individuals in the United States. With the rise of police brutality accusations, the exploration of implicit biases, 
+Police killings have affected many individuals in the United States. With the rise of police brutality accusations, the exploration of implicit biases, 
 and movements against inequity in recent years, our group decided to explore the data and trends regarding these sensitive events. We want to show the data free of bias, 
 and our analysis will visualize trends in data.
 
@@ -6,4 +6,4 @@ The dataset we are working with is from mappingpoliceviolence.org, and contains 
 As per their website, “Mapping Police Violence is a research collaborative collecting comprehensive data on police killings nationwide to quantify 
 the impact of police violence in communities.” Their team includes a data scientist, activists, journalists, and teachers.
 
- 
+This is a visual representation of Black Population in proportion of Black Victim in police brutality cases in different states. This is not meant to undermined different groups of colors that are being affected by police brutality. However, we want to highlight the disparities of Black population percentage and Black Victim Percentage. In certain states such as Massachusetts, there is a higher disparity percentage because they have a low black population in the state (22%) but their percentage of Black Victims from is (87.5%). It’s important to understand the disparities in each state so we can have a stricter public policy in place to address this on-going problem.

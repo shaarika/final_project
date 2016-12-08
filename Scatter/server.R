@@ -5,7 +5,7 @@ library(plotly)
 
 #BLACK POPULATION AND DEATHS
 
-# setwd('~/Desktop/final_project')
+#setwd('~/Desktop/final_project')
 setwd("~/College/UW/INFO201/final_project")
 
 data <- read.csv('data/city_population.csv')
