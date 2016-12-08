@@ -4,6 +4,7 @@ library(leaflet)
 
 <<<<<<< 4e5978c0fe82e1d50c7f5e23e29866c1716fe7e2
 setwd("~/OneDrive/Documents/School/INFO 201/Assignments/final_project")
+# SHOULD CHANGE TO THIS FOR COMPILATION setwd("~/College/UW/INFO201/final_project")
 # police.data <- read.csv('data/police_final.csv')
 =======
 #setwd("~/OneDrive/Documents/School/INFO 201/Assignments/final_project")

@@ -3,7 +3,10 @@ library(ggplot2)
 library(dplyr)
 library(plotly)
 
-setwd('~/Desktop/final_project')
+#BLACK POPULATION AND DEATHS
+
+# setwd('~/Desktop/final_project')
+setwd("~/College/UW/INFO201/final_project")
 
 data <- read.csv('data/city_population.csv')
 data <- as.data.frame(data)
@@ -23,6 +26,7 @@ BuildScatter <- function(df,  search = '',
   plot_ly(data = df, x = eval(parse(text = x.equation)), 
           y = eval(parse(text = y.equation)), 
           mode='markers', 
+          text=~State,
           marker = list(
             opacity = .4, 
             size = 10

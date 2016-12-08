@@ -2,7 +2,9 @@ library(shiny)
 library(plotly)
 library(dplyr)
 
-shinyUI(navbarPage('Electoral College',
+#BLACK POPULATION AND DEATHS
+
+shinyUI(navbarPage('Black Deaths in proportion to black population',
                    
                    # Create a tabPanel to show your scatter plot
                    tabPanel('Scatter',
