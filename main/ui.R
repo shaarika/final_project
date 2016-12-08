@@ -3,13 +3,12 @@ library(plotly)
 
 
 shinyUI(navbarPage('Police Brutality 2013 - 2016',
-   tabPanel("Component 1"),
-   tabPanel("Component 2"),
-   tabPanel("Component 3")
+   tabPanel("Summary"),
+   tabPanel("Map of Incidents"),
+   tabPanel("Bar Charts"),
+   tabPanel("Pie Charts")
                    
-  #   tabPanel('Summary',
-     #   source('~/College/UW/INFO201/final_project/Summary/ui.r")$value
-    #  ),
+
      # Create a tab panel for map
      
      # tabPanel("Map",
@@ -19,10 +18,6 @@ shinyUI(navbarPage('Police Brutality 2013 - 2016',
               
    #  ), 
      
-    # tabPanel(
-       
-       
-     #)
          
         
 ))
