@@ -5,8 +5,8 @@ library(plotly)
 shinyUI(navbarPage('Police Brutality 2013 - 2016',
    tabPanel("Summary"),
    tabPanel("Map of Incidents"),
-   tabPanel("Bar Charts"),
-   tabPanel("Pie Charts")
+   tabPanel("Pie Charts"),
+   tabPanel("Case Study: Black Victims")
                    
 
      # Create a tab panel for map
