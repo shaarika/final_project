@@ -7,7 +7,6 @@ library(ggplot2)
 setwd("~/College/UW/INFO201/final_project")
 
 #**********************MAP*********************************
-
 police.data <- read.csv('data/police_final.csv')
 
 shinyServer(function(input, output, session) {

@@ -168,6 +168,7 @@ seattle.sixth.num <- nrow(seattle.sixth)
 seattle.seventh <- filter(seattle.data, age.group %in% c('90 - Unknown'))
 seattle.seventh.num <- nrow(seattle.seventh)
 
+# Builds chart
 BuildChart <- function(major.cities, age.chart){
   
 #y, x, and x1 values
