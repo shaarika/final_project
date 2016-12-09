@@ -1,47 +1,26 @@
 library(shiny)
 library(plotly)
 library(dplyr)
-#
-add<- police_final %>% 
-  group_by(gender) %>%
-  summarise(n()) 
+library(rsconnect)
 
-colnames(add)[2]<-"Number"
+# Reading in Data
+police_final <-read.csv("police_final.csv")
+police_final <- as.data.frame(police_final)
 
-gender <- plot_ly(add, labels = ~gender, values= ~Number, type = 'pie') %>%
-  layout(title = 'Gender',
-         xaxis = list(showgrid = FALSE, zeroline = FALSE, showticklabels = FALSE),
-         yaxis = list(showgrid = FALSE, zeroline = FALSE, showticklabels = FALSE))
+# Create a function that allows the user to input a variable from the data which produces a pie
+# chart that depecits the desired variable and count
+Pie <- function(col_name){
+  police_final %>%
+    group_by_(col_name = col_name) %>%
+    summarise(count=n()) %>%
+    as.data.frame(col_name) %>%
+    plot_ly(labels = ~col_name, values = ~count, type = 'pie') %>%
+    layout(
+           xaxis = list(showgrid = FALSE, zeroline = FALSE, showticklabels = FALSE),
+           yaxis = list(showgrid = FALSE, zeroline = FALSE, showticklabels = FALSE))}
 
-#Armed vs Unarmed 
-combine <- police_final %>%
-  group_by(armed) %>%
-  summarise(n()) 
-
-colnames(combine)[2]<-"Number"
-
-armed <- plot_ly(combine, labels = ~armed, values= ~Number, type = 'pie') %>%
-  layout(title = 'Armed',
-         xaxis = list(showgrid = FALSE, zeroline = FALSE, showticklabels = FALSE),
-         yaxis = list(showgrid = FALSE, zeroline = FALSE, showticklabels = FALSE))
-
-#Race
-addition <- police_final %>%
-  group_by(race) %>%
-  summarise(n())
-
-colnames(addition)[2]<-"Number"
-
-race <- plot_ly(addition, labels = ~race, values= ~Number, type = 'pie') %>%
-  layout(title = 'Race',
-         xaxis = list(showgrid = FALSE, zeroline = FALSE, showticklabels = FALSE),
-         yaxis = list(showgrid = FALSE, zeroline = FALSE, showticklabels = FALSE))
-###########################################
-
+# Create a shiny server that creates a pie chart that takes in the input variable from the dataset
 shinyServer(function(input, output) {
-  output$plot1 <- renderPlotly(gender)
-  })
-
-
-
-  
+  output$plot <- renderPlotly(Pie(input$variable)
+                            )}
+)
