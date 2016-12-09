@@ -11,6 +11,8 @@ shinyUI(navbarPage('Police Killings 2013 - 2016',
                  p("INFO 201 Final Project"),
                  p("By: Shaarika Kaul, Ishan Narula, Andy Taing, Ada Arquiza, & Linh Tran")
                ),
+               
+               #Summary of data, what we're trying to show, questions we answer
                 mainPanel(
                   h1("Our Project"),
                   h3("Police violence has affected many individuals in the United States. With the rise of police brutality accusations, the exploration of implicit biases, 
@@ -32,7 +34,7 @@ shinyUI(navbarPage('Police Killings 2013 - 2016',
      ),
   
 
-#********************************MAP************************************     
+#********************************UI FOR MAP************************************     
       tabPanel("Map of incidents",
                sidebarPanel(
                  
@@ -73,10 +75,12 @@ shinyUI(navbarPage('Police Killings 2013 - 2016',
                  h4("- Change marker size and opacity for your viewing convenience")
                )
       ),
+#*************************************** UI FOR BAR CHART **********************************************
 
   tabPanel('Bar Chart',
            sidebarLayout(
              sidebarPanel(
+               #creates dropdown menu
                selectInput('dropdown', label = 'Variables', choices = list("Gender" = 'gender_test', 
                             "Race" = 'race_test', 'Age Group' = 'age_test', 'Situation' = 'armed_test'))
              ),
@@ -92,7 +96,7 @@ shinyUI(navbarPage('Police Killings 2013 - 2016',
            )
 ),
 
-#*************************************** CASE STUDY **********************************************
+#*************************************** UI FOR CASE STUDY **********************************************
 tabPanel('Case Study',
          # Add a titlePanel to your tab
          titlePanel('Black Population vs Black Victim'),
@@ -121,8 +125,35 @@ tabPanel('Case Study',
            )
            
          )
-) #,
+),
+
+#****************************************** PIE CHART***********************************************
+tabPanel('Pie Chart',
          
+         # Add a title and a widget that allows the user to select variable from a list of variables in the data 
+         titlePanel("Data from 2013 to 2016"),
+         sidebarLayout(
+           sidebarPanel(
+           selectInput("variable", "Variable:",
+                       choices = list("Gender" = "gender",
+                                      "Armed v. Unarmed" = "armed",
+                                      "Race" = "race",
+                                      "Age" = "age.group",
+                                      "Year" = "year"))
+            ),
+           
+         
+         # Add plotlyOutput to plot the pie chart desired from the select menu 
+         mainPanel(
+           titlePanel("Graph of Selected Variable:"),
+           plotlyOutput("plot"),
+           h4("In the legend, click on any variable to remove it from the data to compare other variables 
+              against eachother!"),
+           h4("**Any variable that produces '0' designates unavailable data**")
+           
+           )
+         )
+)
 ###ENDING BRACKETS### 
 
 ))

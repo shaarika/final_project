@@ -4,5 +4,3 @@ INFO 201 Project on Police Killings in 2016
 We tried to make the website more attractive, but unfortunately it did not work.
 
 View website from folder main ui.r and server.r 
-
-link : "https://shaarika.shinyapps.io/info201_final_project/"
